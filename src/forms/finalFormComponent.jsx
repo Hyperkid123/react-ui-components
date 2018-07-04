@@ -22,7 +22,7 @@ const componentSelect = (componentType, { input, meta, ...rest }) => ({
     className={`${rest.invalid ? 'has-error' : ''} final-form-select`}
     optionClassName="final-form-select-option"
     {...input}
-    onChange={option => input.onChange(rest.multi ? selectValue(option, rest.labelKey) : option)}
+    onChange={option => input.onChange(rest.multi ? selectValue(option, rest.labelKey) : option.value)}
     {...rest}
   />,
   switch: <Switch {...input} value={!!input.value} onChange={(elem, state) => input.onChange(state)} {...rest} />,
